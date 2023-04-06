@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+{%load static%}
+{% block title %}
+<title>Welcome to MySite!!</title>
+{% endblock title %}
+
+{%block content %}
+    <div class="container">
+        <h1>{{ index_text }}</h1>
+        <div class="row mt-5">
+            <div class="col-lg-4">
+                <img class="rounded-3" src="{%static 'image/note1.jpg' %}" alt="Page Not Found" width="300" height="250">
+            </div>
+            <div class="col-lg-4">
+                <img class="rounded-3" src="{%static 'image/note2.jpg' %}" alt="Page Not Found" width="300" height="250">
+            </div>
+            <div class="col-lg-4">
+                <img class="rounded-3" src="{%static 'image/note1.jpg' %}" alt="Page Not Found" width="300" height="250" >
+            </div>
+        </div>
+        <div class="row mt-3">
+            <div class="col-md-10 offset-md-3">
+                <center><p class="h2 text-primary">This is a paragrapgh and rsamdon text hbv jgvjh</p></center>
+                <center><p class="h3">This is a paragrapgh and rsamdon text gv yuhvv hvyg</p></center>
+                <center><p class="h5">This is a paragrapgh and rsamdon text</p></center>
+                <center><a href="{% url 'todolist' %}"><button type="button" class="btn btn-primary btn-lg mt-3">Lets Get Started</button></a></center>
+            </div>
+        </div>
+    </div>
+{%endblock content %}

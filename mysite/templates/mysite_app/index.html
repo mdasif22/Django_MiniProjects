@@ -1,0 +1,55 @@
+{%load static%}
+<html>
+    <head>
+        <title>First App</title>
+        <link rel="stylesheet" href="{%static 'css/mystyle.css'%}"/>
+    </head
+    <body>
+        <br>
+        {%if messages %}
+            {%for message in messages %}
+                <div class="alert alert-info alert-dismissible fade show" role="alert">
+                    {{message}}
+                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                </div>
+            {%endfor%}
+        {%endif %}
+
+        <form method="POST">
+            {% csrf_token %}
+            <div class="mb-3">
+              <label>Name</label>
+              <input type="text" name="name" class="form-control">
+            </div>
+            <div class="mb-3">
+                <label>Address</label>
+                <input type="text" name="address" class="form-control">
+            </div>
+            <div class="mb-3">
+                <label>Phone</label>
+                <input type="number" name="phone" class="form-control">
+            </div>
+            <div class="mb-3 form-check">
+              <input type="checkbox" class="form-check-input">
+              <label class="form-check-label" name="male">Male ? </label>
+            </div>
+            <button type="submit" class="btn btn-primary">Submit</button>
+          </form>
+          <br><br>
+        <h1>Hello Asif this is test.html</h1>
+        <h3>{{ insert_me }}</h3>
+        <img src="{%static 'image/logo.png'%}">
+        <div>
+        My Name Is 
+        {%if all_obj%}
+            {% for obj in all_obj %}<br>
+                {%if obj.male%}
+                    {{obj.name}} from {{obj.address}} and i am a Male
+                {% else %}
+                    {{obj.name}} from {{obj.address}} and i am a Female
+                {% endif %}
+            {%endfor%}
+        {%endif%}
+        </div>
+    </body>
+</html>
